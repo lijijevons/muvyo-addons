@@ -1,0 +1,11 @@
+*
+!/.gitignore
+!/README.md
+!/index.json
+!/index.json.sig
+!/plugins/
+!/plugins/*/
+!/plugins/*/manifest.json
+!/plugins/*/encrypted.json
+!/plugins/*/signature.json
+!/plugins/*/README.md
