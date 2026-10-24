@@ -1,0 +1,25 @@
+{
+  "name": "lijijevons 的搜索插件",
+  "sequence": 2,
+  "plugins": [
+    {
+      "id": "lijijevons.butailing",
+      "name": "不太灵搜索",
+      "version": "1.0.0",
+      "description": "搜索不太灵的网盘与磁力资源，公开网盘链接直接展示，磁力使用账号已有的会员权限。",
+      "author": "lijijevons",
+      "path": "plugins/lijijevons.butailing",
+      "api": 1
+    },
+    {
+      "id": "lijijevons.miniyingshi",
+      "name": "迷你影视搜索",
+      "version": "1.1.1",
+      "description": "搜索迷你影视的磁力与网盘资源，按需获取分享链接。",
+      "author": "lijijevons",
+      "path": "plugins/lijijevons.miniyingshi",
+      "api": 1
+    }
+  ],
+  "public_key": "UxrJiVmMsIiVJmMNFgAQo1EFnXxDS/apzEDaT50D76g="
+}
