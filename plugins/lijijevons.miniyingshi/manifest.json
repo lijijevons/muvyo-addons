@@ -1,0 +1,52 @@
+{
+  "api": 1,
+  "id": "lijijevons.miniyingshi",
+  "name": "迷你影视搜索",
+  "version": "1.1.1",
+  "release_notes": "修复登录 POST 缺少 Origin 及站点访问会话初始化步骤导致的 403。新增账号状态区，通过网站 /auth/me 验证真实登录状态；403 访问拒绝不再误报为 Cookie 失效。",
+  "author": "lijijevons",
+  "description": "搜索迷你影视的磁力与网盘资源，按需获取分享链接。",
+  "min_mv_version": "3.13.2",
+  "entry": "main.js",
+  "permissions": {
+    "domains": ["www.miniyingshi.com", "assets.miniyingshi.com"]
+  },
+  "config": [
+    {
+      "key": "email", "label": "迷你影视登录邮箱", "type": "text",
+      "help": "可选。填写迷你影视的登录邮箱，与下方密码配套；首次获取受限链接时自动登录，无需手动复制 Cookie。"
+    },
+    {
+      "key": "password", "label": "迷你影视登录密码", "type": "secret",
+      "help": "仅用于向迷你影视官网登录。密码保密保存；登录成功后缓存 Cookie，会话失效时尝试刷新或重新登录。"
+    },
+    {
+      "key": "cookie", "label": "迷你影视 Cookie", "type": "secret",
+      "help": "备用方式。未填写邮箱和密码时才使用手动 Cookie。搜索不使用 Cookie；不要填写其他站点或网盘的 Cookie。"
+    },
+    {
+      "key": "source", "label": "资源范围", "type": "select", "default": "all",
+      "options": [
+        {"value": "all", "label": "网盘和磁力"},
+        {"value": "netdisk", "label": "仅网盘"},
+        {"value": "magnet", "label": "仅磁力"}
+      ]
+    },
+    {"key": "limit", "label": "最多返回", "type": "number", "min": 1, "max": 100, "step": 1, "default": "40", "unit": "条"},
+    {"key": "max_titles", "label": "网盘最多匹配作品", "type": "number", "min": 1, "max": 5, "step": 1, "default": "3", "unit": "部"},
+    {"key": "max_pages", "label": "磁力最多搜索页数", "type": "number", "min": 1, "max": 3, "step": 1, "default": "2", "unit": "页"}
+  ],
+  "settings": {
+    "description": "搜索始终匿名；获取链接先尝试匿名，站点要求登录时用邮箱和密码自动登录，缓存并按需刷新 Cookie。也可不填账号，仅使用手动 Cookie。若有站点验证或限流，请到网站处理后重试。仅使用有权访问的资源。",
+    "links": [{"title": "迷你影视", "url": "https://www.miniyingshi.com/"}]
+  },
+  "capabilities": {
+    "account": {"title": "登录状态"},
+    "search": {
+      "link_types": ["magnet", "baidupan", "aliyundrive", "123pan", "115", "cloud189", "guangyapan"],
+      "supports_tmdb": false,
+      "resolve": true,
+      "resolve_cost": "none"
+    }
+  }
+}
