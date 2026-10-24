@@ -1,0 +1,30 @@
+{
+ "version": 1,
+ "certificate": {
+  "certificate": {
+   "aud": "mediavault-addon-author",
+   "version": 1,
+   "serial": 21,
+   "author_id": "gh-126224421",
+   "author": "lijijevons",
+   "namespace": "lijijevons",
+   "public_key": "uKtyGuT+/O1hLui8KxTPkGcdrsxOIu0B13nqdiQED5o=",
+   "issued_at": 1792850565,
+   "expires_at": 1824386565,
+   "content_key": "EWk/UyV/8DAsBeTvXhSa6nALA227hn1YLE9/g3dAryA=",
+   "content_key_version": 1,
+   "installation_key": "+yEne0t7HSSPt9In5BzWE5s/1ziGm9na37x55NcrhR4="
+  },
+  "signature": "JYVi0aLQK9Ok8CoAhMiFOOTCiOiwxA5ROuyMGLvx8LRSQZ+SIv3FKA171PEonWeT36/QX0OX/4Cz69cNGGR9Cg=="
+ },
+ "payload": {
+  "plugin_id": "lijijevons.miniyingshi",
+  "version": "1.1.1",
+  "files": {
+   "README.md": "411b4ed85288db7b5b48d37473c784c7ea80b3002ee22a91a106fbd9dac78129",
+   "encrypted.json": "b3192b26105c403b00c98f3760fd506f4f8ba42f02c97a99ea849c1c19548e17",
+   "manifest.json": "3cdc32eba812360a193a26e03a4d5836d5464e1b1405676e98feeb34623c36a0"
+  }
+ },
+ "signature": "tU3ud/DjwDdQWVlthwBOH4SBjtGw6yk+gItGyOWfCE1lJDhIoIO6AvwREuvVVfCuYRc1dl2ifNNFBSWn4e0MCQ=="
+}
