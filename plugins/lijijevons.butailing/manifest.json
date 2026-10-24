@@ -1,0 +1,29 @@
+{
+  "api": 1,
+  "id": "lijijevons.butailing",
+  "name": "不太灵搜索",
+  "version": "1.0.0",
+  "author": "lijijevons",
+  "description": "搜索不太灵的网盘与磁力资源，公开网盘链接直接展示，磁力使用账号已有的会员权限。",
+  "min_mv_version": "3.13.2",
+  "entry": "main.js",
+  "permissions": {"domains": ["www.butai0.club", "img.mvinfo.homes"]},
+  "config": [
+    {"key": "token", "label": "不太灵登录令牌", "type": "secret", "help": "可选。公开网盘搜索不使用令牌。磁力需要网站允许的会员权限，可在浏览器正常登录后，从该站点 API 请求的 Authorization: Bearer 后复制令牌值。网页登录含图形验证码，插件不自动处理验证码。"},
+    {"key": "source", "label": "资源范围", "type": "select", "default": "netdisk", "options": [
+      {"value": "netdisk", "label": "网盘（无需登录）"},
+      {"value": "all", "label": "网盘和磁力"},
+      {"value": "magnet", "label": "磁力（需会员权限）"}
+    ]},
+    {"key": "limit", "label": "最多返回", "type": "number", "min": 1, "max": 100, "step": 1, "default": "40", "unit": "条"},
+    {"key": "max_pages", "label": "最多搜索页数", "type": "number", "min": 1, "max": 3, "step": 1, "default": "2", "unit": "页"}
+  ],
+  "settings": {
+    "description": "公开网盘链接直接展示，无需逐条解锁。磁力需登录令牌与网站已有会员权限；网站登录带图形验证码，请在浏览器完成。首个标签标明具体资源类型。仅使用有权访问的资源。",
+    "links": [{"title": "不太灵影视", "url": "https://www.butai0.club/"}]
+  },
+  "capabilities": {
+    "account": {"title": "登录状态"},
+    "search": {"link_types": ["magnet", "baidupan", "aliyundrive", "123pan", "115", "cloud189", "guangyapan"], "supports_tmdb": false, "resolve": false, "resolve_cost": "none"}
+  }
+}
